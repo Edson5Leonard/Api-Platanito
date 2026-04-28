@@ -1,0 +1,56 @@
+-- drop database if exists platanitos;
+
+create database platanitos;
+use platanitos;
+
+
+SHOW TABLES;
+create table Marca(
+	id int auto_increment primary key,
+    Nombre char(50) not null
+);
+
+create table Categoria (
+	id int auto_increment primary key,
+    Nombre char(50) not null
+);
+
+create table Producto (
+	id int auto_increment primary key,
+    Nombre char(80) not null,
+    Precio decimal(10,2) not null,
+    Stock int not null,
+    idMarca int references Marca(id),
+    idCategoria int references Categoria(id),
+    Talla char(5),
+    Color char(20)
+);
+
+create table Cliente (
+	id int auto_increment primary key,
+    Nombre char(50) not null,
+    Dni char(8) not null,
+    Correo char(60) not null,
+    Password char(30) not null
+);
+
+create table Pedido (
+	id int auto_increment primary key,
+    idCliente int references Cliente(id),
+    Fecha char(10) not null,
+    Total decimal(10,2) not null,
+    Estado char(20) not null
+);
+
+-- Insters datos
+
+insert Marca values (null, 'Platanitos' ), (null, 'Adidas'), (null, 'Nike');
+insert Categori values (null, 'Calzado'), (null, 'bolso'), (null, 'Accesorios');
+insert Producto values (null, 'zapatillas Urban G1', 129.90, 100, 1, 1, '37', 'Blanco');
+insert Producto values (null, 'Bolso Casual Black', 89.000, 45, 1, 2, 'M', 'Negro');
+insert Cliente values (null, 'Platanito User', '12345678', 'Cliente@platanito.com', 'pass123');
+insert Pedidos values (null, 1, '2024/05/20', 129.90, 'Pendiente');
+insert Cliente values (null, 'Platanito VIP', '77778888', 'admin@platanito.com', 'plata123');
+insert Cliente values (null, 'Usuario Test', '11223344', 'test@gmail.com', '123456');
+
+    

@@ -1,0 +1,31 @@
+package com.example.Platanito.entity;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Cliente")
+public class Cliente {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String nombre; 
+    private String dni;
+    private String correo;
+    private String password;
+
+    // --- ESCRIBE ESTO MANUALMENTE PARA CADA CAMPO ---
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+
+    public String getCorreo() { return correo; }
+    public void setCorreo(String correo) { this.correo = correo; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public String getDni() { return dni; }
+    public void setDni(String dni) { this.dni = dni; }
+}
