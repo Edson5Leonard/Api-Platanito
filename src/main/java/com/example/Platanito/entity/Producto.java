@@ -15,11 +15,11 @@ public class Producto {
     private String color;
 
     @ManyToOne
-    @JoinColumn(name = "idMarca")
+    @JoinColumn(name = "id_Marca")
     private Marca marca;
 
     @ManyToOne
-    @JoinColumn(name = "idCategoria")
+    @JoinColumn(name = "id_Categoria")
     private Categoria categoria;
 
     // Getters y Setters

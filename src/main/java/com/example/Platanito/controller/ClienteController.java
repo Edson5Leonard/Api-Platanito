@@ -18,6 +18,11 @@ public class ClienteController {
         return repo.findAll(); 
     }
 
+    @GetMapping("/buscar/{id}")
+    public Cliente buscarPorId(@PathVariable Integer id){
+        return repo.findById(id).orElse(null);
+    }
+
     @GetMapping("/{dni}") 
     public Cliente buscar(@PathVariable String dni) { 
         return repo.findByDni(dni); 
@@ -31,7 +36,7 @@ public class ClienteController {
     }
 
     
-    @PostMapping("/login")
+    @PostMapping("/auth/login")
     public String login(@RequestBody Cliente c){
         Cliente encontrado = repo.findByCorreoAndPassword(c.getCorreo(), c.getPassword());
         if (encontrado != null) {

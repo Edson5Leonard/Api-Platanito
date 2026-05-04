@@ -18,7 +18,7 @@ public class MarcaController {
         return repo.findAll();
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public Marca crear(@RequestBody Marca m) {
         return repo.save(m);
     }

@@ -13,7 +13,7 @@ public class Cliente {
     private String correo;
     private String password;
 
-    // --- ESCRIBE ESTO MANUALMENTE PARA CADA CAMPO ---
+    
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
