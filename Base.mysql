@@ -45,7 +45,7 @@ create table Pedido (
 -- Insters datos
 
 insert Marca values (null, 'Platanitos' ), (null, 'Adidas'), (null, 'Nike');
-insert Categori values (null, 'Calzado'), (null, 'bolso'), (null, 'Accesorios');
+insert Categoria values (null, 'Calzado'), (null, 'bolso'), (null, 'Accesorios');
 insert Producto values (null, 'zapatillas Urban G1', 129.90, 100, 1, 1, '37', 'Blanco');
 insert Producto values (null, 'Bolso Casual Black', 89.000, 45, 1, 2, 'M', 'Negro');
 insert Cliente values (null, 'Platanito User', '12345678', 'Cliente@platanito.com', 'pass123');
